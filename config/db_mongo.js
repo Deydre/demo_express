@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 //mongoose.set('strictQuery', false);
-//const DATABASE_URL = "mongodb://localhost:27017/fakeshop";
+
 // mongoose.connect("mongodb://localhost:27017/local", { useNewUrlParser: true, useUnifiedTopology: true});
 // mongoose.connect("mongodb://localhost:27017/local");
-mongoose.connect("mongodb+srv://deydrealonso:DcoSdd2AWOkY7628@clusterito.e2ddu.mongodb.net/");
+mongoose.connect(process.env.DATABASE_URL);
 
 
 const db = mongoose.connection;
