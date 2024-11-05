@@ -1,5 +1,4 @@
 const ProviderService = require('../services/providers.services')
-// --- CREAR E IMPORTAR CARPETA SERVICES
 
 // READ
 // [GET] TODOS http://localhost:3000/api/providers Retorna un objeto con los datos de todos los providers. Retorna un status 200.
@@ -13,23 +12,6 @@ const getProvider = async (req, res) => {
         res.status(400).json({ msj: `ERROR: ${error.stack}` });
     }
 }
-
-// // [GET] UNO http://localhost:3000/api/providers + body {companyName}
-// // Retorna un objeto con los datos de todos los providers. Retorna un status 200.
-// const getOneProvider = async (req, res) => {
-//     try {
-//         const data = req.body; // {companyName}
-//         let provider = await Provider.find({ data }); // find {companyName}
-//         res.status(200).json({
-//             message: "Provider encontrado",
-//             provider: provider
-//         }); // Respuesta de la API para todos los providers
-//     }
-//     catch (error) {
-//         console.log(`ERROR: ${error.stack}`);
-//         res.status(400).json({ msj: `ERROR: ${error.stack}` });
-//     }
-// }
 
 // CREATE
 // [POST] http://localhost:3000/api/providers + body {companyName, website, image}
